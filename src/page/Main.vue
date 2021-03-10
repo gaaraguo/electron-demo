@@ -15,11 +15,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-app-region: drag;
 }
 </style>
 
 <script>
-
 
 
 
@@ -28,6 +28,7 @@ export default {
   
   created(){
      this.search();
+     
   },
   mounted() {
   },

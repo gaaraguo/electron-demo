@@ -48,6 +48,7 @@ input{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  -webkit-app-region: drag;
 }
 
 
@@ -63,7 +64,7 @@ export default {
     addRoute () {
         const broadcast = new BroadcastChannel('loginStatus');
         broadcast.postMessage(true);
-        window.close();
+        window.api.closeWindow();
     },
   }
 

@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Login from '@/components/Login'
-import Default from '@/components/Default'
-import Main from '@/components/Main'
+import HelloWorld from '@/page/HelloWorld'
+import Login from '@/page/Login'
+import Default from '@/page/Default'
+import Main from '@/page/Main'
 Vue.use(Router)
 
 export default new Router({
