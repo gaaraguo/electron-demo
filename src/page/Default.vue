@@ -80,18 +80,11 @@ export default {
       // window.api.send("toMain", "some data");
     },
     addRoute() {
-      let routerJump = this.$router.resolve({ path: "/login" });
-      window.open(routerJump.href, "_blank");
-
-      // this.$router.push({path:'/login',query:{}});
-
-      // window.location.href = routerJump.href;
+      
+      window.api.createWindow("#/login");
     },
     addRoute1() {
-      let routerJump = this.$router.resolve({ path: "/main" });
-      window.open(routerJump.href, "_blank","height=100,width=100,innerHeight=100,innerWidth=100,outerHeight=100,outerWidth=100");
-
-      // window.location.href = routerJump.href
+       window.api.createWindow("#/main");
     },
   },
 };

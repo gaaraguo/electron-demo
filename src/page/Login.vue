@@ -64,7 +64,7 @@ export default {
     addRoute () {
         const broadcast = new BroadcastChannel('loginStatus');
         broadcast.postMessage(true);
-        window.api.closeWindow();
+        window.api.closeWindow("#" + this.$route.path);
     },
   }
 
