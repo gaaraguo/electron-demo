@@ -8,6 +8,8 @@ const path = require("path");
 const { dir } = require('console');
 const si = require('systeminformation');
 const {WindowManager} = require("./WindowManager.js");
+const ffmpeg = require('fluent-ffmpeg');
+
 let win;
 
 
@@ -44,6 +46,23 @@ function createWindow() {
   // .catch(error => console.error(error));
 
   
+  var outStream = fs.createWriteStream('/Users/gaara/demo/dist/out.mp4');
+
+ffmpeg('/Users/gaara/demo/dist/4_154884690000114.mp4')
+.input(('/Users/gaara/demo/dist/4_154884690000114.mp4')).output('/Users/gaara/demo/dist/out.mp4').
+  size('320x240').videoCodec('libx264')
+  .audioCodec('libmp3lame')
+  .on('error', function(err) {
+    console.log('An error occurred: ' + err.message);
+  })
+  .on('progress',function(progress){
+    console.log(progress);
+  })
+  .on('end', function() {
+    console.log('Processing finished !');
+  }).run();
+  // .pipe(outStream, { end: true });
+
 
 }
 
